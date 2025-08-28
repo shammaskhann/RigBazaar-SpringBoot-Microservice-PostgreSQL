@@ -21,7 +21,7 @@ built with **enterprise-grade backend architecture** and modern frontend apps.
 RigBazaar follows a **modular, event-driven architecture** with caching and monitoring.
 
 ### System Design Diagram
-![RigBazaar System Design](./workflow.html)  
+![RigBazaar System Design](./img.png)  
 *(Diagram created in Draw.io and exported for documentation use)*
 
 ---
