@@ -1,12 +1,11 @@
 package com.example.rigbazaar.RigBazaar.services;
 
 import com.example.rigbazaar.RigBazaar.config.RabbitMQConfig;
-import com.example.rigbazaar.RigBazaar.entities.wrapper.MessageWrapper;
+import com.example.rigbazaar.RigBazaar.entities.Chats.wrapper.MessageWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 @Slf4j
 @Service

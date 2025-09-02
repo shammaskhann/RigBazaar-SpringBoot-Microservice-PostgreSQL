@@ -1,4 +1,4 @@
-package com.example.rigbazaar.RigBazaar.entities;
+package com.example.rigbazaar.RigBazaar.entities.Chats;
 
 import lombok.*;
 

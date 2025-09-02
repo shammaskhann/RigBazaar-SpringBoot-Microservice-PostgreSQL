@@ -1,10 +1,9 @@
 package com.example.rigbazaar.RigBazaar.controllers;
 
-import com.example.rigbazaar.RigBazaar.entities.Message;
-import com.example.rigbazaar.RigBazaar.entities.Room;
-import com.example.rigbazaar.RigBazaar.entities.args.CreateRoomArgs;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Message;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Room;
+import com.example.rigbazaar.RigBazaar.entities.Chats.args.CreateRoomArgs;
 import com.example.rigbazaar.RigBazaar.repositories.RoomRepository;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

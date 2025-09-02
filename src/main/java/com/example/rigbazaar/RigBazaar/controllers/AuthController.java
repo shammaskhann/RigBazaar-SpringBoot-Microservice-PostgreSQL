@@ -2,7 +2,6 @@ package com.example.rigbazaar.RigBazaar.controllers;
 
 import com.example.rigbazaar.RigBazaar.entities.UserCredentials;
 import com.example.rigbazaar.RigBazaar.entities.UserEntity;
-import com.example.rigbazaar.RigBazaar.repositories.MongoDBGridFsRepository;
 import com.example.rigbazaar.RigBazaar.services.UserService;
 import com.example.rigbazaar.RigBazaar.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -32,8 +31,6 @@ public class AuthController {
     private AuthenticationManager authenticationManager;  // For Authentication the Jwt auth Tokens
     @Autowired
     private JwtUtil jwtUtil; // JWT Auth token Main Service
-    @Autowired
-    private MongoDBGridFsRepository gridFsRepository; // repo (Mongo for storing the image
 
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -69,17 +66,17 @@ public class AuthController {
 public ResponseEntity<?> registerPost(
         @RequestParam("username") String username,
         @RequestParam("email") String email,
-        @RequestParam("password") String password,
-        @RequestPart(value = "profilePic", required = false) MultipartFile profilePic
+        @RequestParam("password") String password
+        // @RequestPart(value = "profilePic", required = false) MultipartFile profilePic
 ) {
     List<String> errors = new ArrayList<>();
     if (email.isEmpty()) errors.add("email is required");
     if (password.isEmpty()) errors.add("password is required");
     if (username.isEmpty()) errors.add("username is required");
-    //check for file size and restrict to 5MB
-    if (profilePic != null && profilePic.getSize() > 5 * 1024 * 1024) {
-        errors.add("Profile picture size should not exceed 5MB");
-    }
+    // //check for file size and restrict to 5MB
+    // if (profilePic != null && profilePic.getSize() > 5 * 1024 * 1024) {
+    //     errors.add("Profile picture size should not exceed 5MB");
+    // }
     if (!errors.isEmpty())
         return ResponseEntity.badRequest().body(Map.of("status", false, "message", errors));
 
@@ -93,12 +90,12 @@ public ResponseEntity<?> registerPost(
         user.setEmail(email);
         user.setPassword(password);
 
-        if (profilePic != null && !profilePic.isEmpty()) {
-            String imageId = gridFsRepository.uploadToGridFs(profilePic);
-            String imageUrl = "http://localhost:8080/api/files/profile/" + imageId;
+        // if (profilePic != null && !profilePic.isEmpty()) {
+        //     String imageId = gridFsRepository.uploadToGridFs(profilePic);
+        //     String imageUrl = "http://localhost:8080/api/files/profile/" + imageId;
 
-            user.setProfilePicUrl(imageUrl); // Save GridFS file ID
-        }
+        //     user.setProfilePicUrl(imageUrl); // Save GridFS file ID
+        // }
         userService.register(user);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("status", true, "data", user));

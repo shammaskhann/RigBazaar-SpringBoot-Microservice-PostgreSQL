@@ -2,9 +2,9 @@ package com.example.rigbazaar.RigBazaar.controllers;
 
 
 
-import com.example.rigbazaar.RigBazaar.entities.LastMessageInfo;
-import com.example.rigbazaar.RigBazaar.entities.Message;
-import com.example.rigbazaar.RigBazaar.entities.Room;
+import com.example.rigbazaar.RigBazaar.entities.Chats.LastMessageInfo;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Message;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Room;
 import com.example.rigbazaar.RigBazaar.payload.MessageRequest;
 import com.example.rigbazaar.RigBazaar.repositories.RoomRepository;
 import com.example.rigbazaar.RigBazaar.services.MessageProducerService;
@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

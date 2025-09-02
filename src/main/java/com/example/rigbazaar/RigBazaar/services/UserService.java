@@ -4,11 +4,9 @@ package com.example.rigbazaar.RigBazaar.services;
 import com.example.rigbazaar.RigBazaar.controllers.RoomController;
 import com.example.rigbazaar.RigBazaar.entities.UserCredentials;
 import com.example.rigbazaar.RigBazaar.entities.UserEntity;
-import com.example.rigbazaar.RigBazaar.entities.args.CreateRoomArgs;
 import com.example.rigbazaar.RigBazaar.repositories.UserRepository;
 import com.example.rigbazaar.RigBazaar.repositories.UserRepositoryImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,7 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,18 +28,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private UserRepositoryImpl userRepositoryImpl;
-
-    @Autowired
-    private RoomController _roomController;
-
     public void register(UserEntity userEntity) {
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
         userRepository.save(userEntity);
     }
 
-    public void delete(ObjectId id) {
+    public void delete(String id) {
         userRepository.deleteById(id);
     }
 
@@ -56,7 +47,7 @@ public class UserService {
 
     @Cacheable(key = "#id.toString()")
     public Optional<UserEntity> getUserById(String id) {
-        return userRepository.findById(new ObjectId(id));
+        return userRepository.findById(id);
     }
 
     public boolean checkEmailExists(String email) {

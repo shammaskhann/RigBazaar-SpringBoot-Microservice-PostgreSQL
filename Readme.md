@@ -7,6 +7,7 @@ built with **enterprise-grade backend architecture** and modern frontend apps.
 ---
 
 ## 🚀 Features
+
 - **Marketplace** – Post, browse, and search hardware listings.
 - **Bidding System** – Bulk hardware auctions with RabbitMQ events.
 - **Tech Forum** – Q&A with upvotes, tags, and moderation.
@@ -21,18 +22,21 @@ built with **enterprise-grade backend architecture** and modern frontend apps.
 RigBazaar follows a **modular, event-driven architecture** with caching and monitoring.
 
 ### System Design Diagram
-![RigBazaar System Design](./img.png)  
-*(Diagram created in Draw.io and exported for documentation use)*
+
+![RigBazaar System Design](./workflow.gif)  
+_(Diagram created in Draw.io and exported for documentation use)_
 
 ---
 
 ## 🛠️ Tech Stack
 
 **Frontend**
+
 - React (Web Application)
 - Flutter (Mobile App)
 
 **Backend & Infrastructure**
+
 - Spring Boot (Core backend services)
 - PostgreSQL (Relational database)
 - Redis (Caching layer)
@@ -40,6 +44,7 @@ RigBazaar follows a **modular, event-driven architecture** with caching and moni
 - FastAPI + ML Model (Price prediction microservice)
 
 **DevOps & Monitoring**
+
 - Docker & Docker Compose
 - GitHub Actions (CI/CD)
 - Prometheus & Grafana (Monitoring & observability)
@@ -49,15 +54,23 @@ RigBazaar follows a **modular, event-driven architecture** with caching and moni
 ## 📌 Project Roadmap
 
 ### Phase 1 – MVP
+
 - Marketplace + Forum (monolith with PostgreSQL)
 - Authentication & Authorization (Spring Security + JWT)
 
+### ERD(PHASE 1) Diagram
+
+![ERD(PHASE 1) Diagram](./erd_phase1.gif)  
+_(Diagram created in Draw.io and exported for documentation use)_
+
 ### Phase 2 – Advanced
+
 - Event-driven bidding with RabbitMQ
 - Redis caching for hot listings & forum threads
 - CI/CD pipeline with GitHub Actions
 
 ### Phase 3 – Enterprise
+
 - AI microservice for price predictions
 - Split into microservices with API Gateway
 - Monitoring dashboards (Prometheus + Grafana)
@@ -66,9 +79,11 @@ RigBazaar follows a **modular, event-driven architecture** with caching and moni
 ---
 
 ## 🤝 Contributing
+
 Contributions are welcome! Please open issues or submit PRs with improvements.
 
 ---
 
 ## 📄 License
+
 This project is licensed under the MIT License.

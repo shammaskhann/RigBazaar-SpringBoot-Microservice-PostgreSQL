@@ -41,7 +41,7 @@ public class UserController {
             // Get all users except current user
             List<UserEntity> allUsersFetched = userService.getAllUsers()
                     .stream()
-                    .filter(u -> !u.getId().equals(user.getId()))
+                    .filter(u -> !u.getUser_id().equals(user.getUser_id()))
                     .collect(Collectors.toList());
 
 

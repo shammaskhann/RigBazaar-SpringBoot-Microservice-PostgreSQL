@@ -1,9 +1,10 @@
 package com.example.rigbazaar.RigBazaar.repositories;
 
 
-import com.example.rigbazaar.RigBazaar.entities.Room;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoomRepository extends MongoRepository<Room, String> {
+import com.example.rigbazaar.RigBazaar.entities.Chats.Room;
+
+public interface RoomRepository extends JpaRepository<Room, String> {
     Room findByRoomId(String roomId);
 }

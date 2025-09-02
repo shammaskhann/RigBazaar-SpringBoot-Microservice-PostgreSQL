@@ -1,4 +1,4 @@
-package com.example.rigbazaar.RigBazaar.entities.args;
+package com.example.rigbazaar.RigBazaar.entities.Chats.args;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

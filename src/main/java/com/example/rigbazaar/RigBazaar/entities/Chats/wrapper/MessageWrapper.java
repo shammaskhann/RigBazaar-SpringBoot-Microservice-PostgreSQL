@@ -1,4 +1,4 @@
-package com.example.rigbazaar.RigBazaar.entities.wrapper;
+package com.example.rigbazaar.RigBazaar.entities.Chats.wrapper;
 
 import com.example.rigbazaar.RigBazaar.payload.MessageRequest;
 import lombok.AllArgsConstructor;

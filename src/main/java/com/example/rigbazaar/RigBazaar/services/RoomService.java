@@ -1,14 +1,12 @@
 package com.example.rigbazaar.RigBazaar.services;
 
 
-import com.example.rigbazaar.RigBazaar.entities.Message;
-import com.example.rigbazaar.RigBazaar.entities.Room;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Message;
+import com.example.rigbazaar.RigBazaar.entities.Chats.Room;
 import com.example.rigbazaar.RigBazaar.repositories.RoomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
